@@ -16,10 +16,10 @@ def add_expense():
 
         expense = {"amount": amount, "category": category, "date": date}
         expenses.append(expense)
-        print("✅ Expense added successfully!")
+        print(" Expense added successfully!")
 
     except ValueError:
-        print("❗ Invalid input. Please try again.")
+        print(" Invalid input. Please try again.")
 
 # Function to view all expenses
 def view_expenses():
@@ -27,7 +27,7 @@ def view_expenses():
         print("No expenses to show.")
         return
 
-    print("\n📋 All Expenses:")
+    print("\n All Expenses:")
     for idx, e in enumerate(expenses, start=1):
         print(f"{idx}. ₹{e['amount']} - {e['category']} on {e['date']}")
     print()
@@ -43,7 +43,7 @@ def monthly_summary():
         month = e['date'].strftime("%Y-%m")
         summary[month] = summary.get(month, 0) + e['amount']
 
-    print("\n📊 Monthly Summary:")
+    print("\n Monthly Summary:")
     for month, total in sorted(summary.items()):
         print(f"{month}: ₹{total:.2f}")
     print()
@@ -65,10 +65,10 @@ def main():
         elif choice == "3":
             monthly_summary()
         elif choice == "0":
-            print("👋 Exiting... Have a great day!")
+            print(" Exiting... Have a great day!")
             break
         else:
-            print("❗ Invalid choice. Try again.")
+            print("Invalid choice. Try again.")
 
 if __name__ == "__main__":
     main()
